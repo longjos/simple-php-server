@@ -7,7 +7,22 @@ package {'apache2':
     } ->
 package {'php5':
         ensure => present,
+    } ->
+package {'mysql-server':
+        ensure => present,
+    } ->
+package {'mysql-client':
+        ensure => present,
     }
+
+service {'apache2':
+        ensure => running,
+    }
+service {'mysql':
+        ensure => running,
+    }
+
+
 
 
 
